@@ -1,0 +1,109 @@
+.auth-page {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Ambient orbs */
+.auth-bg { position: fixed; inset: 0; pointer-events: none; z-index: 0; }
+.auth-bg__orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(80px);
+  opacity: 0.12;
+}
+.auth-bg__orb--1 {
+  width: 500px; height: 500px;
+  background: var(--accent);
+  top: -150px; right: -100px;
+}
+.auth-bg__orb--2 {
+  width: 400px; height: 400px;
+  background: #9060f0;
+  bottom: -150px; left: -100px;
+}
+
+/* Panel */
+.auth-panel {
+  background: var(--bg-surface);
+  border: 1px solid var(--border);
+  border-radius: var(--r-lg);
+  padding: 40px;
+  width: 100%;
+  max-width: 420px;
+  position: relative;
+  z-index: 1;
+  box-shadow: var(--shadow-lg), 0 0 0 1px rgba(92,92,240,.06);
+}
+
+.auth-panel__brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 28px;
+}
+.auth-logo {
+  width: 36px; height: 36px;
+  background: var(--accent);
+  border-radius: var(--r-sm);
+  display: flex; align-items: center; justify-content: center;
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 1.1rem;
+  color: #fff;
+}
+.auth-logo-name {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 1.2rem;
+  color: var(--text-primary);
+}
+
+.auth-panel__header { margin-bottom: 28px; }
+.auth-panel__header h2 { margin-bottom: 4px; }
+.auth-panel__header p { color: var(--text-secondary); font-size: 0.9rem; }
+
+.auth-form { display: flex; flex-direction: column; gap: 18px; }
+
+.auth-submit {
+  height: 44px;
+  font-size: 0.9rem;
+  margin-top: 4px;
+}
+
+.auth-switch {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+}
+.auth-switch a {
+  color: var(--accent);
+  text-decoration: none;
+  font-weight: 500;
+}
+.auth-switch a:hover { color: var(--accent-hover); }
+
+/* Password strength */
+.strength-meter {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 6px;
+}
+.strength-bars { display: flex; gap: 3px; flex: 1; }
+.strength-bar {
+  height: 3px;
+  flex: 1;
+  border-radius: 99px;
+  transition: background var(--t-fast);
+}
+.strength-label { font-size: 0.72rem; font-weight: 600; white-space: nowrap; min-width: 60px; text-align: right; }
+
+@media (max-width: 480px) {
+  .auth-panel { padding: 28px 20px; }
+}
